@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini CRM Front-End (Next.js)
 
-## Getting Started
+Bienvenue ! Ce projet est une implémentation front-end d’un mini CRM développé avec *Next.js*. Il a été réalisé dans le cadre d’un challenge technique afin de démontrer des compétences en Next.js, design UI, gestion d’état et structuration de projet.
 
-First, run the development server:
+## Objectif
+
+Créer une interface CRM destinée à une équipe commerciale interne. L’application permet aux utilisateurs de :
+
+- Consulter une liste de clients  
+- Accéder aux fiches détaillées de chaque client  
+- Ajouter un nouveau client via un formulaire  
+
+Toutes les données sont *mockées* (aucune connexion à une API ou base de données).
+
+## Fonctionnalités
+
+### Page de Connexion (Mockée)
+- Écran statique de connexion  
+  test@gmail.com / 123456  
+- Aucune authentification réelle  
+- Design propre et responsive
+
+### Tableau de Bord
+- Navigation latérale (Dashboard, Clients, Profile)  
+
+### Liste des Clients
+- Affichage des clients sous forme de tableau (données mockées via faker.js)  
+- Colonnes : Nom, Email, Téléphone, Date de création  
+- Tri par nom  
+- Recherche par nom
+
+### Détail d’un Client
+- Ouverture au clic sur une ligne du tableau  
+- Affichage des détails complets du client  
+- Historique simulé
+- Utilisateurs similaires
+
+### Formulaire d’Ajout de Client
+- Construit avec React Hook Form  
+- Champs obligatoires : Nom, Prénom, Email, Téléphone  
+- Validations simples (format de l’email, numéro de téléphone)  
+- Affichage d’un message de succès après soumission
+
+## Stack Technique
+
+- *Framework :* Next.js 15.3.4 
+- *UI :* Tailwind CSS  
+- *Gestion des formulaires :* React Hook Form  
+- *Mocking :* Faker.js
+- *Langage :* TypeScript
+
+## Fonctionnalités Bonus
+
+- Pagination 
+- Responsivité mobile  
+- Zustand pour la gestion d’état
+
+## 📦 Démarrage
 
 ```bash
+# 1. Cloner le dépôt
+git clone https://github.com/nihadben1/AriMayi.git
+cd exercice
+
+# 2. Installer les dépendances
+npm install
+
+# 3. Lancer l’application
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
