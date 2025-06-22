@@ -109,37 +109,39 @@ useEffect(() => {
                 </div>
 
                 <div className="overflow-x-auto bg-white shadow-sm rounded-lg">
-                    <table className="min-w-full divide-y divide-gray-200">
-                        <thead className="bg-gray-50">
-                            <tr>
-                                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Nom Complet</th>
-                                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Email</th>
-                                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Téléphone</th>
-                                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500">Date de création</th>
-                            </tr>
-                        </thead>
-                        <tbody className="bg-white divide-y divide-gray-100">
-                            {paginatedClients.map((client) => (
-                                <tr key={client.id} className="hover:bg-gray-100 transition">
-                                    <td className="px-4 py-2">
-                                        <Link href={`/clients/${client.id}`} className="text-blue-600 hover:underline">
-                                            {client.fullName}
-                                        </Link>
-                                    </td>
-                                    <td className="px-4 py-2">{client.email}</td>
-                                    <td className="px-4 py-2">{client.phone}</td>
-                                    <td className="px-4 py-2">{client.createdAt}</td>
-                                </tr>
-                            ))}
-                            {paginatedClients.length === 0 && (
+                    <div className="w-full overflow-x-auto">
+                        <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
                                 <tr>
-                                    <td colSpan={4} className="text-center py-4 text-gray-400">
-                                        Aucun client trouvé.
-                                    </td>
+                                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 whitespace-nowrap">Nom Complet</th>
+                                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 whitespace-nowrap">Email</th>
+                                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 whitespace-nowrap">Téléphone</th>
+                                    <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 whitespace-nowrap">Date de création</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="bg-white divide-y divide-gray-100">
+                                {paginatedClients.map((client) => (
+                                    <tr key={client.id} className="hover:bg-gray-100 transition">
+                                        <td className="px-4 py-2 whitespace-nowrap">
+                                            <Link href={`/clients/${client.id}`} className="text-blue-600 hover:underline">
+                                                {client.fullName}
+                                            </Link>
+                                        </td>
+                                        <td className="px-4 py-2 whitespace-nowrap">{client.email}</td>
+                                        <td className="px-4 py-2 whitespace-nowrap">{client.phone}</td>
+                                        <td className="px-4 py-2 whitespace-nowrap">{client.createdAt}</td>
+                                    </tr>
+                                ))}
+                                {paginatedClients.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="text-center py-4 text-gray-400">
+                                            Aucun client trouvé.
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                     <Pagination page={page} count={filteredClients.length} itemsPerPage={ITEMS_PER_PAGE} />
                 </div>
             </div>

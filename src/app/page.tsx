@@ -16,7 +16,7 @@ export default function AuthPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (
-      credentials.email === "test@test.com" &&
+      credentials.email === "test@gmail.com" &&
       credentials.password === "123456"
     ) {
       router.push("/dashboard");
